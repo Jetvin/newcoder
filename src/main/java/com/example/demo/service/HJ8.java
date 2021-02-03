@@ -1,5 +1,7 @@
 package com.example.demo.service;
 
+import java.util.Scanner;
+
 public class HJ8 {
 
     /**
@@ -32,4 +34,22 @@ public class HJ8 {
      * 1 2
      * 3 4
      */
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        int count = scanner.nextInt();
+        int[] arr = new int[count];
+        for (int i = 0; i < count; i++){
+            String[] nums = scanner.nextLine().split(" ");
+            Integer key = Integer.valueOf(nums[0]);
+            Integer value = Integer.valueOf(nums[1]);
+            arr[key] += value;
+        }
+
+        for (int i = 0; i < count; i++){
+            if(arr[i] != 0){
+                System.out.println(i + " " + arr[i]);
+            }
+        }
+    }
 }

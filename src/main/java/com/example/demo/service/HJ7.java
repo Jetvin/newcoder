@@ -1,5 +1,7 @@
 package com.example.demo.service;
 
+import java.util.Scanner;
+
 public class HJ7 {
 
     /**
@@ -25,4 +27,9 @@ public class HJ7 {
      *
      * 6
      */
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        float num = scanner.nextFloat();
+        System.out.println(Math.round(num));
+    }
 }

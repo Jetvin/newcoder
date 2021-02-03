@@ -1,5 +1,7 @@
 package com.example.demo.service;
 
+import java.util.Scanner;
+
 public class HJ4 {
 
     /**
@@ -63,4 +65,20 @@ public class HJ4 {
      * 第一组是3个数字，分别是：2，2，1。
      * 第二组是11个数字，分别是：10，20，40，32，67，40，20，89，300，400，15。
      */
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        while (scanner.hasNext()) {
+            int[] arr = new int[1001];
+            int length = scanner.nextInt();
+            for (int i = 0; i < length; i++) {
+                int num = scanner.nextInt();
+                arr[num] = num;
+            }
+            for (int k = 0; k < 1001; k++) {
+                if (arr[k] != 0) {
+                    System.out.println(arr[k]);
+                }
+            }
+        }
+    }
 }

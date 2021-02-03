@@ -1,5 +1,7 @@
 package com.example.demo.service;
 
+import java.util.Scanner;
+
 public class HJ6 {
 
     /**
@@ -27,4 +29,18 @@ public class HJ6 {
      *
      * 2 2 3 3 5
      */
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int num = scanner.nextInt();
+        StringBuffer str = new StringBuffer();
+        for (int i = 2; i * i <= num; i++){
+            if (num % i == 0){
+                str.append(i + " ");
+                num = num / i;
+                i--;
+            }
+        }
+        str.append(num + num);
+        System.out.print(str.toString());
+    }
 }

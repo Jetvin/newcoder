@@ -1,5 +1,9 @@
 package com.example.demo.service;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
+
 public class HJ5 {
 
     /**
@@ -27,4 +31,19 @@ public class HJ5 {
      * 10
      * 170
      */
+
+    private static List<String> HEX = Arrays.asList("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F");
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        while (scanner.hasNext()){
+            char[] charArray = scanner.nextLine().substring(1).toCharArray();
+            int number = 0;
+            for (int i = charArray.length - 1; i > 0; i--){
+                int index = HEX.indexOf(String.valueOf(charArray[i]));
+                number += Math.pow(16, charArray.length - 1 - i) * index;
+            }
+            System.out.println(number);
+        }
+    }
 }

@@ -1,6 +1,5 @@
 package com.example.demo.service;
 
-import java.util.HashMap;
 import java.util.Scanner;
 
 public class HJ3 {
@@ -32,4 +31,28 @@ public class HJ3 {
      * 12345678
      * 90000000
      */
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        while (scanner.hasNext()){
+            char[] charArray = scanner.nextLine().toCharArray();
+            StringBuffer buffer = new StringBuffer();
+            for (int i = 0; i < charArray.length; i++){
+
+                if (i != 0 && i % 8 == 0){
+                    System.out.println(buffer.toString());
+                    buffer = new StringBuffer();
+                    buffer.append(charArray[i]);
+                }else {
+                    buffer.append(charArray[i]);
+                }
+
+            }
+
+            if (buffer.length() != 0){
+                buffer.append("00000000");
+                System.out.println(buffer.substring(0,8));
+            }
+        }
+    }
 }
